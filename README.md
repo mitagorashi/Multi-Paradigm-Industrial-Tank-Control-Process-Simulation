@@ -1,7 +1,7 @@
 # 🎛️ Multi-Paradigm Industrial Process Controller Tank Automation
 
 
-![Hardware](https://img.shields.io/badge/Hardware-ABB--PLC-blue)
+![Target](https://img.shields.io/badge/Target-ABB--PLC-blue)
 ![Software](https://img.shields.io/badge/Software-CODESYS-blue)
 ![Standard](https://img.shields.io/badge/Standard-IEC_61131--3-orange)
 ![Status](https://img.shields.io/badge/Status-Functional-brightgreen)
@@ -9,8 +9,9 @@
 
 ![Digital Process Visualization](media/tank_visualization.png)
 
+
 ## 📌 Project Overview
-This project presents a high-fidelity industrial control system for a multi-stage chemical or liquid tank process. Developed in the ABB CODESYS environment, the system manages a complex state machine controlling a Centrifugal Pump, Industrial Mixer, Thermal Heater, and Discharge Valve.
+This project presents a high-fidelity industrial control system for a liquid tank process, developed entirely within a **Digital Twin simulation environment**. The system autonomously manages a Pump, Mixer, Heater, and Valve using a master state machine.
 
 The primary engineering objective was to implement a Multi-Paradigm Architecture, utilizing all six industrial programming languages defined by the IEC 61131-3 standard to handle specific task requirements—from safety-critical interlocks to complex thermal mathematical modeling.
 
@@ -41,11 +42,6 @@ The controller transitions through five distinct operational phases
 4. OPERATION (CFC) The main production loop maintains liquid level (20-80%) and temperature (400-500°C) while managing the discharge valve.
 5. STABILITY (IL) Triggered by system faults; uses low-level instruction-based logic to force the system back into safe operating bounds.
 
-## 🔧 Installation & Usage
-1. Open the project in ABB CODESYS.
-2. Compile the project to verify all six language blocks are linked to the `PLC_PRG`.
-3. Switch to the Visualization tab.
-4. Run the simulation to view the dynamic liquid and thermal response.
 
 ---
 Developed by Mohammed Gorashi as a master-level demonstration of industrial automation and IEC 61131-3 standards.
