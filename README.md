@@ -1,2 +1,50 @@
-# Multi-Paradigm-Industrial-Tank-Control-Process-Simulation
-A complex industrial automation system implemented in ABB CODESYS, showcasing a master-level application of the IEC 61131-3 standard.
+# 🎛️ Multi-Paradigm Industrial Process Controller Tank Automation
+
+![Hardware](httpsimg.shields.iobadgeHardware-ABB--PLC-blue)
+![Software](httpsimg.shields.iobadgeSoftware-CODESYS-blue)
+![Standard](httpsimg.shields.iobadgeStandard-IEC_61131--3-orange)
+![Status](httpsimg.shields.iobadgeStatus-Functional-brightgreen)
+![Author](httpsimg.shields.iobadgeAuthor-Mohammed_Gorashi-blue)
+
+![Digital Process Visualization](mediatank_visualization.png)
+
+## 📌 Project Overview
+This project presents a high-fidelity industrial control system for a multi-stage chemical or liquid tank process. Developed in the ABB CODESYS environment, the system manages a complex state machine controlling a Centrifugal Pump, Industrial Mixer, Thermal Heater, and Discharge Valve.
+
+The primary engineering objective was to implement a Multi-Paradigm Architecture, utilizing all six industrial programming languages defined by the IEC 61131-3 standard to handle specific task requirements—from safety-critical interlocks to complex thermal mathematical modeling.
+
+## 🚀 Key Technical Features
+ Full-Spectrum Language Implementation 
+     SFC (Sequential Function Chart) Manages high-level system states and transitions.
+     ST (Structured Text) Handles complex scaling math and warm-up threshold logic.
+     LD (Ladder Diagram) Manages safety-critical Offline and Emergency interlocks.
+     FBD (Function Block Diagram) Controls system-wide variable initialization and reset routines.
+     CFC (Continuous Function Chart) Manages real-time Operation mode for continuous process loops.
+     IL (Instruction List) Implements low-level corrective logic for the Stability fault-handling mode.
+ Digital Process Simulation A custom-coded physics engine simulates liquid dynamics, thermal gaindecay, and actuator response times every 500ms to provide a realistic testing environment.
+ Advanced Signal Scaling Implements a precision scaling block that converts raw 14-bit PID values (0-16383) into engineering units for Level (0-100%) and Temperature (0-1000°C).
+ Self-Correcting Stability Logic An autonomous safety layer that monitors for HHLL Level and HH Temperature alarms, triggering corrective Stability routines with 10-second confirmation delays.
+ Performance Analytics Engine Automatically logs system reliability data, including total startup cycles and a precision timer (HMS) tracking time spent in corrective modes.
+
+## 🛠️ Software Stack
+ IDE ABB CODESYS V2.3  V3.5.
+ Standard IEC 61131-3.
+ HMIVisualization Integrated CODESYS Visualization for real-time process monitoring.
+
+## 🧠 System State Machine & Logic
+The controller transitions through five distinct operational phases
+
+1. OFFLINE (LD) Hardware is de-energized; all actuators are locked in a safe state.
+2. INIT (FBD) System variables are cleared, and analog sensors are calibrated.
+3. STARTUP (ST) The tank fills to 40-70% and pre-heats to 300-350°C before engaging the mixer.
+4. OPERATION (CFC) The main production loop maintains liquid level (20-80%) and temperature (400-500°C) while managing the discharge valve.
+5. STABILITY (IL) Triggered by system faults; uses low-level instruction-based logic to force the system back into safe operating bounds.
+
+## 🔧 Installation & Usage
+1. Open the project in ABB CODESYS.
+2. Compile the project to verify all six language blocks are linked to the `PLC_PRG`.
+3. Switch to the Visualization tab.
+4. Run the simulation to view the dynamic liquid and thermal response.
+
+---
+Developed by Mohammed Gorashi as a master-level demonstration of industrial automation and IEC 61131-3 standards.
