@@ -1,12 +1,13 @@
 # 🎛️ Multi-Paradigm Industrial Process Controller Tank Automation
 
-![Hardware](httpsimg.shields.iobadgeHardware-ABB--PLC-blue)
-![Software](httpsimg.shields.iobadgeSoftware-CODESYS-blue)
-![Standard](httpsimg.shields.iobadgeStandard-IEC_61131--3-orange)
-![Status](httpsimg.shields.iobadgeStatus-Functional-brightgreen)
-![Author](httpsimg.shields.iobadgeAuthor-Mohammed_Gorashi-blue)
 
-![Digital Process Visualization](mediatank_visualization.png)
+![Hardware](https://img.shields.io/badge/Hardware-ABB--PLC-blue)
+![Software](https://img.shields.io/badge/Software-CODESYS-blue)
+![Standard](https://img.shields.io/badge/Standard-IEC_61131--3-orange)
+![Status](https://img.shields.io/badge/Status-Functional-brightgreen)
+![Author](https://img.shields.io/badge/Author-Mohammed_Gorashi-blue)
+
+![Digital Process Visualization](media/tank_visualization.png)
 
 ## 📌 Project Overview
 This project presents a high-fidelity industrial control system for a multi-stage chemical or liquid tank process. Developed in the ABB CODESYS environment, the system manages a complex state machine controlling a Centrifugal Pump, Industrial Mixer, Thermal Heater, and Discharge Valve.
